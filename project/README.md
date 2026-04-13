@@ -1,5 +1,4 @@
 # Pixel Drawer
-#### Video Demo:  <https://youtu.be/Bwneegxskkc>
 #### Description:
 
 **Personal Information:**
