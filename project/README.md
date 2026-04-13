@@ -1,5 +1,5 @@
 # Pixel Drawer
-#### Description:
+
 
 **Personal Information:**
 - Name: David Rabba
