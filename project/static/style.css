@@ -1,0 +1,29 @@
+#gridCanvas {
+    display: grid;
+
+    /* fixed pixel behavior */
+    width: 600px;
+    height: 600px;
+
+    /* if u were to hold the mouse down and drag it, it would start moving the pixels like a text.
+    so this basically prevents that from happening */
+    user-select: none;
+    cursor: crosshair;
+
+    background-color: #eee;
+}
+
+.pixel {
+    border: 0.1px solid #ddd;
+    background-color: #fff;
+}
+
+.active-tool {
+    background-color: #0d6efd !important;
+    color: white !important;
+}
+
+#gridCanvasContainer {
+    /* this just centers the canvas on the page, my friends recommended me to add this since it's a nice little neat trick */
+    margin: 0 auto;
+}

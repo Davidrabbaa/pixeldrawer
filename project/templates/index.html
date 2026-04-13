@@ -1,0 +1,75 @@
+<!--
+    https://getbootstrap.com/docs/4.1/getting-started/introduction/
+    this is the bootstrap documentation where i got a lot of code from    
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Art Drawer</title>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- it looks arcane because i have the css in a different folder called static -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="bg-light">
+
+    <!-- navigation -->
+    <nav class="navbar navbar-dark bg-primary mb-4">
+        <div class="container">
+            <!--add a big title here where pressing it returns to main page-->
+            <a class="navbar-brand" href="/">Pixel Art Drawer</a>
+            <div class="navbar-nav d-flex flex-row gap-3">
+                <a class="nav-link active" href="/">Drawer</a>
+                <a class="nav-link" href="/gallery">Gallery</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <!-- sidebar -->
+            <div class="col-md-3 border p-3 bg-white mb-3">
+                <h5>Tools</h5>
+                <hr>
+
+                <div class="mb-3">
+                    <label class="form-label">Color:</label>
+                    <input type="color" class="form-control" id="colorPicker" value="#000000">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Grid Size: <span id="sizeDisplay">32x32</span></label>
+                    <select class="form-select" id="gridSizeSelect">
+                        <option value="16">16 x 16</option>
+                        <option value="32" selected>32 x 32</option>
+                        <option value="64">64 x 64</option>
+                    </select>
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button class="btn btn-outline-dark active" id="btnDraw">Draw</button>
+                    <button class="btn btn-outline-dark" id="btnErase">Eraser</button>
+                    <button class="btn btn-danger" id="btnClear">Clear</button>
+                    <hr>
+                    <input type="text" class="form-control" id="artTitle" placeholder="Enter title...">
+                    <button class="btn btn-success" id="btnSave">Save to Gallery</button>
+                </div>
+            </div>
+
+            <!-- drawing canvas -->
+            <div class="col-md-9 text-center">
+                <div class="border bg-white p-2 d-inline-block">
+                    <div id="gridCanvas"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- i explained why the src is like this in the link tag above -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
